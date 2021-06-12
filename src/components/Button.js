@@ -1,20 +1,21 @@
-import React, { Component, } from 'react';
 import './stylecomponents.scss'
+import { useState } from 'react';
 
+//Hook only component
 
-class Button extends Component {
-    render() {
-        return (
+function Button({icon, handleClick}){
+    
+    return (
 
             <div class='button'>
-                    <img src='./resources/fondo.png' />
-                    {this.props.icon}
+                    <img src='./resources/fondo.png' onClick={handleClick}/>
+                    {icon}
                     
              </div>
 
         );
     }
-}
+
 
 
 export default Button;

@@ -5,7 +5,17 @@ import Toggle from './Toggle.js'
 import { BiBeer, BiCloudLightRain, BiGhost, BiUndo } from 'react-icons/bi';
 
 
+//Class + functions component
 
+//function to hide changing style
+function offsetToggle(isToggled){
+
+        if (isToggled==0)
+            return {bottom:"10px",};
+        else
+            return {bottom:"-140px",};
+
+}
 
 class Ribbon extends Component {
 
@@ -16,10 +26,6 @@ class Ribbon extends Component {
         }
     }
 
-    componentDidUpdate() {
-
-
-    }
 
     render() {
 
@@ -28,22 +34,36 @@ class Ribbon extends Component {
         if (this.state.isToggled==0)
             divStyle={bottom:"10px",};
         else
-            divStyle={bottom:"-150px",};
+            divStyle={bottom:"-140px",};
 
 
         return (
 
-            <div class='ribbondiv' style={divStyle}>
+            <div class='ribbondiv' style={offsetToggle(this.state.isToggled)}>
 
                 <Toggle isToggled={this.state.isToggled} onToggle ={ ()=>{this.setState({isToggled:!this.state.isToggled})}}/>
                 <div class="bottom">
 
                         {(() => {
                             switch (this.props.show) {
-                                case 1: return ( <div class="array "><Button icon={<BiUndo />} /> <Button icon={<BiGhost />} /></div>)
-                                case 2: return ( <div class="array "><Button icon={<BiUndo />} /> <Button icon={<BiGhost />} /> <Button icon={<BiCloudLightRain />} /></div>)
-                                case 3: return ( <div class="array "><Button icon={<BiUndo />} /> <Button icon={<BiGhost />} /> <Button icon={<BiCloudLightRain />} /> <Button icon={<BiBeer />} /></div>)
-                                case 0: return ( <div class="arraybg "><Button icon={<BiUndo />} /> <Button icon={<BiGhost />} /></div>)
+                                case 1: return ( <div class="array ">
+                                                    <Button icon={<BiUndo />} handleClick={()=>this.props.handleClick(0)} /> 
+                                                    <Button icon={<BiGhost/>} handleClick={()=>this.props.handleClick(1)} />
+                                                </div>)
+                                case 2: return ( <div class="array ">  
+                                                    <Button icon={<BiUndo /> } handleClick={()=>this.props.handleClick(0)}/> 
+                                                    <Button icon={<BiGhost />} handleClick={()=>this.props.handleClick(1)}/> 
+                                                    <Button icon={<BiCloudLightRain />} handleClick={()=>this.props.handleClick(2)}/>
+                                                </div>)
+                                case 3: return ( <div class="array ">   
+                                                    <Button icon={<BiUndo />} handleClick={()=>this.props.handleClick(0)}/> 
+                                                    <Button icon={<BiGhost />} handleClick={()=>this.props.handleClick(1)}/> 
+                                                    <Button icon={<BiCloudLightRain />} handleClick={()=>this.props.handleClick(2)}/> 
+                                                    <Button icon={<BiBeer />} handleClick={()=>this.props.handleClick(3)}/>
+                                                </div>)
+                                case 0: return ( <div class="arraybg ">
+                                                    <Button icon={<BiUndo />} />
+                                                </div>)
                             }
 
                         })()}

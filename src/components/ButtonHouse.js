@@ -1,12 +1,14 @@
 import React, { Component, } from 'react';
 import './stylecomponents.scss'
 
+
+//Class only component
+
 const srcarray= {
     1: "./resources/1.png",
     2: './resources/4.png',
     3: './resources/11.png'
 }
-
 
 class ButtonHouse extends Component {
     constructor(props) {
