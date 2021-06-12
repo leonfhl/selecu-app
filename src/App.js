@@ -25,12 +25,12 @@ function App() {
 
   return (
     <div className="App">
-      <div className="container-fluid homepage-bgimage">
+      
 
         <Dashboard scenario = {buttonReq} setId = {setId}/>
 
         <Ribbon show={id} setScenario = {setButton} setId = {setId}/>
-      </div>
+      
     </div>
   );
 }
@@ -46,10 +46,12 @@ function Dashboard({scenario, setId}){
 
   if(scenario.buttonPressed===0)
     return(
+      <div className="container-fluid homepage-bgimage">
       <div className="grid-container">
           <div className="grid-item"><ButtonHouse src={1}  onIdChange = {setId} setMouse = {setMouse}/></div>
           <div className="grid-item"><ButtonHouse src={2}  onIdChange = {setId} setMouse = {setMouse}/></div>
           <div className="grid-item"><ButtonHouse src={3}  onIdChange = {setId} setMouse = {setMouse}/></div>
+      </div>
       </div>
     )
   else
@@ -59,7 +61,7 @@ function Dashboard({scenario, setId}){
       return(
         <div className="grid-container">
           <div className="grid-item"></div>
-          <div className="grid-item"><img alt=''  src={scenario.urlPhoto}/></div>
+          <div className="grid-item"><img alt='' style={{width:'400px', height:'auto'}} src={scenario.urlPhoto}/></div>
           <div className="grid-item"></div>
       </div>
       )
