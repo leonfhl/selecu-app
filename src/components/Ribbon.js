@@ -13,6 +13,7 @@ import { BiBeer, BiCloudLightRain, BiGhost, BiUndo } from 'react-icons/bi';
 //function to hide changing style
 function offsetToggle(isToggled){
 
+
         if (isToggled===false)
             return {bottom:"10px",};
         else
@@ -47,7 +48,6 @@ const pathUnsplash = (scenario, setButton) =>{
     return unsplash.photos.getRandom({
       query: arrayScenarios[scenario],
       count: 1,
-      color: 'purple',
     }).then(result => {
       switch (result.type) {
         default:
@@ -77,6 +77,7 @@ class Ribbon extends Component {
         
         this.wrapperRef = React.createRef();
         this.handleToggle= this.handleToggle.bind(this)
+        
     }
 
     handleClick(scenario){
@@ -132,7 +133,7 @@ class Ribbon extends Component {
                                                     <Button icon={<BiBeer />} handleClick={()=>this.handleClick(3)}/>
                                                 </div>)
                                 default: return ( <div className="arraybg ">
-                                                    <Button icon={<BiUndo />} />
+                                                    <Button icon={<BiBeer />} />
                                                 </div>)
                             }
 

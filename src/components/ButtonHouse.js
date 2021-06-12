@@ -21,7 +21,7 @@ class ButtonHouse extends Component {
         this.handleClick = this.handleClick.bind(this);
         this.handleMouse = this.handleMouse.bind(this);
         this.handleMouseOut = this.handleMouseOut.bind(this);
-
+        
     }
 
     //CLICK on house button
@@ -35,7 +35,8 @@ class ButtonHouse extends Component {
     //light element on mouse over and then reset
     handleMouse = () => {
         //alert("nueva alerta "+prop)
-
+        this.props.setMouse(true);
+        
         this.setState({
             mouseover: true,
         });
@@ -43,6 +44,8 @@ class ButtonHouse extends Component {
 
     handleMouseOut = () => {
         //alert("nueva alerta "+prop)
+        this.props.setMouse(false);
+
 
         this.setState({
             mouseover: false,
