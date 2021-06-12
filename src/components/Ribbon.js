@@ -1,6 +1,9 @@
 import React, { Component, } from 'react';
 import './stylecomponents.scss'
 import Button from './Button.js'
+import Toggle from './Toggle.js'
+import { BiBeer, BiCloudLightRain, BiGhost, BiUndo } from 'react-icons/bi';
+
 
 class Ribbon extends Component {
     render() {
@@ -8,13 +11,13 @@ class Ribbon extends Component {
 
             <div class='ribbondiv'>
 
-                <div class="toggle"><img src='./resources/toggle.png' /></div>
+                <Toggle/>
                 <div class="bottom">
                     <div class ="array ">
-                    <Button icon=''/>
-                    <Button icon=''/>
-                    <Button icon=''/>
-                    <Button icon=''/>
+                        <Button icon={<BiUndo/>}/>
+                        <Button icon={<BiGhost/>}/>
+                        <Button icon={<BiCloudLightRain/>}/>
+                        <Button icon={<BiBeer/>}/>
                     </div>
                     <img src='./resources/panel-vacio.png' />
                 </div>
