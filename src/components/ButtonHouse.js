@@ -1,5 +1,5 @@
 import React, { Component,  } from 'react';
-
+import './stylecomponents.scss'
 class ButtonHouse extends Component {
     render() {
         return (

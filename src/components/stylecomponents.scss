@@ -1,0 +1,52 @@
+img {
+    height: 200px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.ribbondiv {
+    position: fixed;
+    bottom: 10px;
+    width: 100%;
+    display: inline-block;
+
+
+    .toggle{
+
+        position: relative;
+        bottom: -115px;
+        width: 100%;
+        z-index: -1;
+        img {
+            width: 15%;
+            height: auto;
+            
+        }
+    }
+    
+    .array{
+        position: relative;
+        bottom: -145px;
+        width: max-content;        
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+    }
+
+    .button{
+        display: inline-block;
+        bottom: -160px;
+        margin-left: 15px;
+        margin-right: 15px;
+                    
+        img{
+            width: 60px;
+            height: auto;
+        }
+
+    }
+
+}
+
