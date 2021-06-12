@@ -25,7 +25,7 @@ function App() {
 
         <Dashboard scenario = {buttonReq} setId = {setId}/>
 
-        <Ribbon show={id} setScenario = {setButton}/>
+        <Ribbon show={id} setScenario = {setButton} setId = {setId}/>
       </div>
     </div>
   );
@@ -35,12 +35,12 @@ function Dashboard({scenario, setId}){
 
   //console.log(pathUnsplash(scenario))
 
-  if(scenario.buttonPressed==0)
+  if(scenario.buttonPressed===0)
     return(
-      <div class="grid-container">
-          <div class="grid-item"><ButtonHouse src={1}  onIdChange = {setId}/></div>
-          <div class="grid-item"><ButtonHouse src={2}  onIdChange = {setId}/></div>
-          <div class="grid-item"><ButtonHouse src={3}  onIdChange = {setId}/></div>
+      <div className="grid-container">
+          <div className="grid-item"><ButtonHouse src={1}  onIdChange = {setId}/></div>
+          <div className="grid-item"><ButtonHouse src={2}  onIdChange = {setId}/></div>
+          <div className="grid-item"><ButtonHouse src={3}  onIdChange = {setId}/></div>
       </div>
     )
   else
@@ -48,10 +48,10 @@ function Dashboard({scenario, setId}){
         //set promise of a photo
         //pathUnsplash(scenario, setUrl);
       return(
-        <div class="grid-container">
-          <div class="grid-item"></div>
-          <div class="grid-item"><img src={scenario.urlPhoto}/></div>
-          <div class="grid-item"></div>
+        <div className="grid-container">
+          <div className="grid-item"></div>
+          <div className="grid-item"><img alt=''  src={scenario.urlPhoto}/></div>
+          <div className="grid-item"></div>
       </div>
       )
       }

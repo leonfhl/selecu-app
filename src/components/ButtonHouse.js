@@ -46,7 +46,7 @@ class ButtonHouse extends Component {
         return (
 
             <div>
-                <img    src={srcarray[index]} 
+                <img alt=''     src={srcarray[index]} 
                         onClick={this.handleClick} 
                         onMouseOver={this.props.handleMouse}
                 />

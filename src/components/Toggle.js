@@ -1,16 +1,15 @@
 import './stylecomponents.scss'
-import { useState } from 'react';
 
 //Hook only component
 
 
-function Toggle ({isToggled, onToggle}) {
+function Toggle ({onToggle}) {
 
     
         return (
 
-            <div class="toggle">
-                <img src='./resources/toggle.png' onClick={onToggle}/>
+            <div className="toggle">
+                <img alt=''  src='./resources/toggle.png' onClick={onToggle}/>
             </div>
 
         );
