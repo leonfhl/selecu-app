@@ -20,6 +20,8 @@ class ButtonHouse extends Component {
 
         this.handleClick = this.handleClick.bind(this);
         this.handleMouse = this.handleMouse.bind(this);
+        this.handleMouseOut = this.handleMouseOut.bind(this);
+
     }
 
     //CLICK on house button
@@ -30,12 +32,20 @@ class ButtonHouse extends Component {
 
     }
 
-    //mouse hovering
-    handleMouse = prop => {
+    //light element on mouse over and then reset
+    handleMouse = () => {
         //alert("nueva alerta "+prop)
 
         this.setState({
-            mouseover: !this.state.mouseover,
+            mouseover: true,
+        });
+    }
+
+    handleMouseOut = () => {
+        //alert("nueva alerta "+prop)
+
+        this.setState({
+            mouseover: false,
         });
     }
 
@@ -43,12 +53,15 @@ class ButtonHouse extends Component {
     render() {
 
         const index = this.props.src;
+        const brightness = this.state.mouseover === false? 1 : 1.4;
         return (
 
             <div>
-                <img alt=''     src={srcarray[index]} 
+                <img alt='' style ={{filter: 'brightness('+brightness+')'}}    
+                        src={srcarray[index]} 
                         onClick={this.handleClick} 
-                        onMouseOver={this.props.handleMouse}
+                        onMouseOver={this.handleMouse}
+                        onMouseOut = {this.handleMouseOut}
                 />
             </div>
 

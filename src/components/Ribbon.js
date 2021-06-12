@@ -72,7 +72,7 @@ class Ribbon extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            isToggled : 0,
+            isToggled : false,
         }
         
         this.wrapperRef = React.createRef();
@@ -110,9 +110,7 @@ class Ribbon extends Component {
 
             <div ref={this.wrapperRef} className='ribbondiv' style={offsetToggle(this.state.isToggled)} >
 
-                <div className="toggle">
-                    <img alt=''  src='./resources/toggle.png' onClick={this.handleToggle}/>
-                </div>
+                <Toggle onToggle={()=>this.handleToggle()}/>
 
                 <div className="bottom">
 

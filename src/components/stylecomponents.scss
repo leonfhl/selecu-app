@@ -19,6 +19,7 @@ img {
         width: 100%;
         z-index: -1;
         pointer-events: all;
+        transition: bottom .3s;
 
         img {
             width: 15%;
