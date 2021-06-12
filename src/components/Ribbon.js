@@ -16,15 +16,26 @@ class Ribbon extends Component {
         }
     }
 
+    componentDidUpdate() {
+
+
+    }
+
     render() {
 
         //alert(this.props.show);
+        let divStyle="";
+        if (this.state.isToggled==0)
+            divStyle={bottom:"10px",};
+        else
+            divStyle={bottom:"-150px",};
+
 
         return (
 
-            <div class='ribbondiv'>
+            <div class='ribbondiv' style={divStyle}>
 
-                <Toggle isToggled={this.state.isToggled} onToggle ={ ()=>{this.setState(!this.state.isToggled)}}/>
+                <Toggle isToggled={this.state.isToggled} onToggle ={ ()=>{this.setState({isToggled:!this.state.isToggled})}}/>
                 <div class="bottom">
 
                         {(() => {
