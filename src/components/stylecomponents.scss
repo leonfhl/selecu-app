@@ -11,7 +11,7 @@ img {
     bottom: 10px;
     width: 100%;
     pointer-events: none;
-
+    transition: bottom .5s;
 
     .toggle{
         position: relative;
@@ -67,5 +67,10 @@ img {
 
         
     }
+}
+
+.ribbondiv.is-nav-open {
+    overflow: bottom "-140px";
+    
 }
 

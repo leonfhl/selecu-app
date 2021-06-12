@@ -13,7 +13,7 @@ import { BiBeer, BiCloudLightRain, BiGhost, BiUndo } from 'react-icons/bi';
 //function to hide changing style
 function offsetToggle(isToggled){
 
-        if (isToggled===0)
+        if (isToggled===false)
             return {bottom:"10px",};
         else
             return {bottom:"-140px",};
@@ -74,6 +74,9 @@ class Ribbon extends Component {
         this.state = {
             isToggled : 0,
         }
+        
+        this.wrapperRef = React.createRef();
+        this.handleToggle= this.handleToggle.bind(this)
     }
 
     handleClick(scenario){
@@ -90,14 +93,27 @@ class Ribbon extends Component {
         pathUnsplash(scenario, this.props.setScenario);
     }
 
+    handleToggle(){
+
+        //animate ribbon with css isnavopen
+        //const wrapper = this.wrapperRef.current;
+        //wrapper.classList.toggle('is-nav-open');
+        //change state
+        this.setState({isToggled:!this.state.isToggled,})
+        //alert(this.state.isToggled)
+    }
+
 
     render() {
 
         return (
 
-            <div className='ribbondiv' style={offsetToggle(this.state.isToggled)}>
+            <div ref={this.wrapperRef} className='ribbondiv' style={offsetToggle(this.state.isToggled)} >
 
-                <Toggle onToggle ={ ()=>{this.setState({isToggled:!this.state.isToggled})}}/>
+                <div className="toggle">
+                    <img alt=''  src='./resources/toggle.png' onClick={this.handleToggle}/>
+                </div>
+
                 <div className="bottom">
 
                         {(() => {
