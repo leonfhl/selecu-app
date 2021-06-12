@@ -47,6 +47,7 @@ const pathUnsplash = (scenario, setButton) =>{
     //get a random photo
     return unsplash.photos.getRandom({
       query: arrayScenarios[scenario],
+      orientation: 'landscape',
       count: 1,
     }).then(result => {
       switch (result.type) {
