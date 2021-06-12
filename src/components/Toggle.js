@@ -22,7 +22,7 @@ function Toggle ({onToggle}) {
         setMouseOver(false)
     }
 
-    const bottom = isMouseOver === false? "-175px" : "-165px";
+    const bottom = isMouseOver === false? "-165px" : "-155px";
     //alert(isMouseOver)
       return (
 
