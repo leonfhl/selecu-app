@@ -2,7 +2,7 @@
 
 Este proyecto usa [Create React App](https://github.com/facebook/create-react-app) para crear la aplicación que se describió en la prueba técnica
 
-## 📃 Condiciones
+## 📃 Requerimientos
 
 * En alguno de los componentes usa clases (exclusivamente). [✅] [/src/components/ButtonHouse.js](/src/components/ButtonHouse.js)
 * En alguno de los componentes mezcla clases con funciones. [✅] [/src/components/Ribbon.js](/src/components/Ribbon.js)
